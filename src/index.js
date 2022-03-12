@@ -1,3 +1,5 @@
+import keyInput from "./KeyInput.js";
+
 const ratio = window.innerWidth / window.innerHeight;
 
 const scene = new THREE.Scene();
@@ -19,6 +21,13 @@ const ground = new THREE.Mesh(geometry, material);
 
 scene.add(ground);
 camera.position.set(5, 15, 15);
+
+const boxGeometry = new THREE.BoxGeometry(2, 2, 2);
+const boxMaterial = new THREE.MeshPhongMaterial({ color: 0x00ff00 });
+const box = new THREE.Mesh(boxGeometry, boxMaterial);
+box.position.set(-2, 0, 8);
+
+scene.add(box);
 
 function animate() {
     requestAnimationFrame(animate);
